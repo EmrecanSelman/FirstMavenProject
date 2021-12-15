@@ -3,9 +3,12 @@ import javafx.collections.ObservableList;
 
 import java.sql.*;
 import java.util.List;
+import java.util.Optional;
 
-public class UserDao  implements Dao<User>{
-    public Connection getConnection( ) throws SQLException {
+public class UserDaoOld {
+
+}
+  /*  public Connection getConnection( ) throws SQLException {
         final String username = "root";
         final String password = "7008134258";
         final String dbUrl = "jdbc:mysql://localhost:3306/booklist.user";
@@ -38,6 +41,11 @@ public class UserDao  implements Dao<User>{
         return (User) gets;
     }
 
+
+    @Override
+    public Optional<User> get(long id) {
+        return Optional.empty();
+    }
 
     @Override
     public List<User> getAll() throws DAOEcxeption {
@@ -80,6 +88,10 @@ public class UserDao  implements Dao<User>{
         return 0;
     }
 
+    @Override
+    public void update(User user, String[] params) {
+
+    }
 
 
     @Override
@@ -98,4 +110,4 @@ public class UserDao  implements Dao<User>{
 
         return false;
     }
-}
+}*/

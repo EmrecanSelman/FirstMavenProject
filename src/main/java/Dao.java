@@ -1,16 +1,15 @@
 import java.util.List;
+import java.util.Optional;
 
 public interface Dao <T>{
-    T get(Integer id) throws DAOEcxeption;
-    List<T> getAll() throws DAOEcxeption;
+    Optional<T> get(long id);
 
-    // return newly created object number, or a -1 on error
-    int save(T t) throws IllegalArgumentException, DAOEcxeption;
+    List<T> getAll();
 
-    // return true on success, false on failure
+    void save(T t);
 
+    void update(T t, String[] params);
 
-    // return true on success, false on failure
-    boolean delete(T t) throws DAOEcxeption;
+    void delete(T t);
 
 }
