@@ -1,8 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
 
-<fx:root prefHeight="400.0" prefWidth="600.0" type="AnchorPane" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
-
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="672.0" prefWidth="830.0" type="Pane" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Button fx:id="loginButton" layoutX="504.0" layoutY="527.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="94.0" text="Giriş" />
+      <Button fx:id="registryButton" layoutX="183.0" layoutY="527.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="94.0" text="Kayıt " />
+      <Label layoutX="163.0" layoutY="73.0" prefHeight="41.0" prefWidth="318.0" text="Kullanıcı adı">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="163.0" layoutY="244.0" prefHeight="41.0" prefWidth="318.0" text="Şifre">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <TextField fx:id="usernameLoginText" layoutX="163.0" layoutY="147.0" prefHeight="35.0" prefWidth="285.0" promptText="username" />
+      <TextField fx:id="passLoginText" layoutX="157.0" layoutY="319.0" prefHeight="35.0" prefWidth="285.0" promptText="password" />
+   </children>
 </fx:root>
