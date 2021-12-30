@@ -1,7 +1,5 @@
 package gui;
 
-import gui.Main;
-import gui.MainController;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -53,8 +51,7 @@ public class RegistryController extends Pane {
 */
            // repository.UserRepository userRepository = new repository.UserRepository();
             // userRepository.save(user);
-            UserRepository userRepository = new UserRepository();
-            userRepository.save(user);
+            UserRepository.getInstance().save(user);
             MainController es = new MainController();
             Scene scene = new Scene(es);
             Main.MAIN_STAGE.setScene(scene);

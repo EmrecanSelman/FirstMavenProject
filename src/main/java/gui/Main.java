@@ -5,6 +5,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import model.User;
+import util.ConfigModel;
 
 
 public class Main extends Application {
@@ -24,8 +25,16 @@ public class Main extends Application {
     public void start(Stage primaryStage) {
 
         MAIN_STAGE = primaryStage;
+        ConfigModel.sync();
+        Parent root ;
+        if (ConfigModel.getInstance().getCurrentUser()!=null){
+            root = new MainController();
+        }
+        else {
+            root =  new SecondPage();
+        }
         primaryStage.setTitle("KÜTÜPHANE UYGULAMASI");
-        Parent root = new MainController();
+
         primaryStage.setScene(new Scene(root));
         primaryStage.setResizable(false);
         primaryStage.show();

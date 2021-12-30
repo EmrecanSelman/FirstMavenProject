@@ -22,7 +22,8 @@
 
 
         <!-- Names the annotated entity class -->
-        <!--   <mapping class="model.User"/> -->
+           <mapping class="model.User"/>
+           <mapping class="model.Book"/>
 
       </session-factory>
   </hibernate-configuration>

@@ -1,10 +1,9 @@
 package gui;
 
-import gui.Main;
-import gui.SecondPage;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
@@ -13,9 +12,10 @@ import repository.UserRepository;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Locale;
 
 public class MainController extends AnchorPane {
-    UserRepository userRepository = new UserRepository();
+
 
     @FXML
     private Button loginButton;
@@ -44,17 +44,24 @@ public class MainController extends AnchorPane {
         }
 
         loginButton.setOnMouseClicked(event -> {
-         List userlist = userRepository.getModels(usernameLoginText.getText(),passLoginText.getText());
+         List userlist = UserRepository.getInstance().getModels(usernameLoginText.getText(),passLoginText.getText());
 
          if(userlist.size() > 0 ){
+             Alert alert = new Alert(Alert.AlertType.INFORMATION);
+             alert.setHeaderText("Başarılı");
+             alert.setContentText("Hoşgeldin " + usernameLoginText.getText().toUpperCase(Locale.ROOT));
+             alert.showAndWait();
              SecondPage es = new SecondPage();
              Scene scene = new Scene(es);
              Main.MAIN_STAGE.setScene(scene);
 
          }
-         else
-             System.out.println("olamdı");
-
+         else {
+             Alert alert = new Alert(Alert.AlertType.INFORMATION);
+             alert.setHeaderText("Başarısız");
+             alert.setContentText("Lütfen Tekrar Deneyin");
+             alert.showAndWait();
+         }
 
 
         });

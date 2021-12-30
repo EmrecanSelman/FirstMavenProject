@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.Pane?>
 
-
-<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="574.0" prefWidth="796.0" style="-fx-background-color: pink;" type="Pane" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" />
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="574.0" prefWidth="796.0" style="-fx-background-color: pink;" type="Pane" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <Button fx:id="viewBooks" layoutX="30.0" layoutY="214.0" mnemonicParsing="false" text="KİTAPLIĞI GÖRÜNTÜLE" />
+        <Button fx:id="deleteBook" layoutX="30.0" layoutY="287.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="138.0" text="KİTAP SİL" />
+        <Button fx:id="addBook" layoutX="30.0" layoutY="250.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="138.0" text="KİTAP EKLE" />
+        <TableView fx:id="booktable" layoutX="244.0" layoutY="54.0" prefHeight="478.0" prefWidth="517.0">
+            <columns>
+                <TableColumn fx:id="bookNameCol" prefWidth="213.0" text="Kitap İsmi" />
+                <TableColumn fx:id="writerNameCol" prefWidth="212.0" text="Yazar" />
+                <TableColumn fx:id="pageNumberCol" prefWidth="91.0" text="Sayfa Sayısı" />
+            </columns>
+        </TableView>
+      <Button fx:id="exitButtonSecondPage" layoutX="80.0" layoutY="520.0" mnemonicParsing="false" text="EXIT" />
+    </children>
+</fx:root>

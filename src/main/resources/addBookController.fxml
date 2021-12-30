@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="476.0" prefWidth="627.0" type="Pane" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TextField fx:id="bookname" layoutX="88.0" layoutY="141.0" prefHeight="25.0" prefWidth="178.0" />
+      <TextField fx:id="pagenumber" layoutX="88.0" layoutY="363.0" prefHeight="25.0" prefWidth="178.0" />
+      <TextField fx:id="writername" layoutX="88.0" layoutY="253.0" prefHeight="25.0" prefWidth="178.0" />
+      <Label layoutX="88.0" layoutY="81.0" prefHeight="33.0" prefWidth="178.0" text="KİTAP İSMİ">
+         <font>
+            <Font name="System Bold" size="26.0" />
+         </font>
+      </Label>
+      <Label layoutX="88.0" layoutY="301.0" prefHeight="33.0" prefWidth="178.0" text="SAYFA SAYISI">
+         <font>
+            <Font name="System Bold" size="26.0" />
+         </font>
+      </Label>
+      <Label layoutX="88.0" layoutY="187.0" prefHeight="33.0" prefWidth="178.0" text="YAZAR İSMİ">
+         <font>
+            <Font name="System Bold" size="26.0" />
+         </font>
+      </Label>
+      <Button fx:id="addBookButton" layoutX="432.0" layoutY="126.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="103.0" text="EKLE">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+      </Button>
+      <Button fx:id="backtoSecondPage" layoutX="432.0" layoutY="348.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="142.0" style="-fx-background-color: pink;" text="GERİ DÖN">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </Button>
+   </children>
+</fx:root>
