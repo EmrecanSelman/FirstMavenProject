@@ -47,6 +47,9 @@ public class AddBookController extends Pane {
 
 
            BookRepository.getInstance().save(book);
+            bookname.setText("");
+            pagenumber.setText("");
+            writername.setText("");
         });
         backtoSecondPage.setOnMouseClicked(event -> {
             SecondPage es = new SecondPage();

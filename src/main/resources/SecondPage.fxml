@@ -18,5 +18,7 @@
             </columns>
         </TableView>
       <Button fx:id="exitButtonSecondPage" layoutX="80.0" layoutY="520.0" mnemonicParsing="false" text="EXIT" />
+      <Button fx:id="giveBackBook" layoutX="30.0" layoutY="334.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="138.0" text="Kitap İade Et" />
+      <Button fx:id="borrowBookOperaiton" layoutX="30.0" layoutY="381.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="138.0" text="Kitap Ödünç Al" />
     </children>
 </fx:root>

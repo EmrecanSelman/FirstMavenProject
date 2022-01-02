@@ -12,10 +12,14 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.layout.Pane;
 import model.Book;
+import model.Order;
+import model.User;
 import repository.BookRepository;
+import repository.OrderRepository;
 import util.ConfigModel;
 
 import java.io.IOException;
+import java.util.Date;
 import java.util.List;
 
 
@@ -42,6 +46,11 @@ public class SecondPage extends Pane {
 
     @FXML
     private TableColumn<Book, String> pageNumberCol;
+    @FXML
+    private Button giveBackBook;
+
+    @FXML
+    private Button borrowBookOperaiton;
    SecondPage() {
 
        FXMLLoader loader = new FXMLLoader();
@@ -87,6 +96,23 @@ public class SecondPage extends Pane {
            MainController es = new MainController();
            Scene scene = new Scene(es);
            Main.MAIN_STAGE.setScene(scene);
+
+       });
+       borrowBookOperaiton.setOnMouseClicked(event -> {
+           User user ;
+           user = ConfigModel.getInstance().getCurrentUser();
+           System.out.println(user);
+           Book selecetedbook =  booktable.getSelectionModel().getSelectedItem();
+           Order order = new Order();
+           order.setGiventime(new Date());
+           order.setBook(selecetedbook);
+           order.setUser(user);
+           order.setStatus(Order.OrderStatus.GIVEN.getType());
+           order.setComingtime(null);
+           OrderRepository.getInstance().save(order);
+
+
+
 
        });
 

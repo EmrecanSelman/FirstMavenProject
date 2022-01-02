@@ -23,6 +23,7 @@ public class User {
     @Column(length = 20)
     private String password;
 
+
    /*
     @AllArgsConstructor
     public model.User(int id, String username, String password) {

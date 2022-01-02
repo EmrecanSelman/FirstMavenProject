@@ -16,7 +16,8 @@
         <property name="current_session_context_class">thread</property>
         <property name="show_sql">true</property>
         <property name="format_sql">true</property>
-        <property name="hbm2ddl.auto">validate</property>
+       <property name="hbm2ddl.auto">update</property>
+
 
         <!-- Validate the database schema on startup -->
 
@@ -24,6 +25,8 @@
         <!-- Names the annotated entity class -->
            <mapping class="model.User"/>
            <mapping class="model.Book"/>
+           <mapping class="model.Order"/>
+
 
       </session-factory>
   </hibernate-configuration>

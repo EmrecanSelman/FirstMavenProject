@@ -9,6 +9,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import model.User;
 import repository.UserRepository;
+import util.ConfigModel;
 
 import java.io.IOException;
 import java.util.List;
@@ -28,7 +29,6 @@ public class MainController extends AnchorPane {
 
     @FXML
     private TextField passLoginText;
-    User user = new User();
 
     MainController() {
 
@@ -44,13 +44,15 @@ public class MainController extends AnchorPane {
         }
 
         loginButton.setOnMouseClicked(event -> {
-         List userlist = UserRepository.getInstance().getModels(usernameLoginText.getText(),passLoginText.getText());
+         List<User> userlist = UserRepository.getInstance().getModels(usernameLoginText.getText(),passLoginText.getText());
 
          if(userlist.size() > 0 ){
              Alert alert = new Alert(Alert.AlertType.INFORMATION);
              alert.setHeaderText("Başarılı");
              alert.setContentText("Hoşgeldin " + usernameLoginText.getText().toUpperCase(Locale.ROOT));
              alert.showAndWait();
+             ConfigModel.getInstance().setCurrentUser(userlist.get(0));
+             ConfigModel.sync();
              SecondPage es = new SecondPage();
              Scene scene = new Scene(es);
              Main.MAIN_STAGE.setScene(scene);
