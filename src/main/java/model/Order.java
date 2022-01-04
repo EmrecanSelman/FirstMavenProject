@@ -40,7 +40,6 @@ public class Order {
         CAME(1);
 
         private final int type;
-
     }
 
 }

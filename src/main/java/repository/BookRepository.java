@@ -10,10 +10,13 @@ import java.util.List;
 public class BookRepository implements IRepository<Book> {
     Session s;
     Transaction t;
-    private BookRepository() {}
+
+    private BookRepository() {
+    }
+
     private static BookRepository instance;
-    public static BookRepository getInstance()
-    {
+
+    public static BookRepository getInstance() {
         if (instance == null)
             instance = new BookRepository();
 
@@ -64,29 +67,31 @@ public class BookRepository implements IRepository<Book> {
     @Override
     public List<Book> getModels(String... params) {
 
-        /* ObservableList<Book> bookObservableListList = FXCollections.observableArrayList();
-        s = HibernateUtil.sf.openSession();
-        List<Book> eList = s.
-                createCriteria(Book.class).list();
-        for (Book ent : eList) {
-            bookObservableListList.add(ent);
-        }
-        return bookObservableListList; */
-            s = HibernateUtil.getSf().openSession();
-            Query q = s.createQuery("FROM Book  WHERE bookname =:bookname and writer = :writer and pagenumber = :pagenumber ");
-            q.setParameter("bookname", params[0]);
-            q.setParameter("writer", params[1]);
-            q.setParameter("pagenumber", params[1]);
-            List<Book> key = q.getResultList();
-            return  key;
+        s = HibernateUtil.getSf().openSession();
+        Query q = s.createQuery("FROM Book  WHERE bookname =:bookname and writer = :writer and pagenumber = :pagenumber ");
+        q.setParameter("bookname", params[0]);
+        q.setParameter("writer", params[1]);
+        q.setParameter("pagenumber", params[1]);
+        List<Book> key = q.getResultList();
+        return key;
 
 //like command in sql
     }
-        @Override
-        public List<Book> getAllModels () {
-            s = HibernateUtil.getSf().openSession();
-            Query q = s.createQuery("FROM Book ");
-            return q.getResultList();
-        }
+
+    public List<Book> getBooks(Book.BookStatus status) {
+
+        s = HibernateUtil.getSf().openSession();
+        Query q = s.createQuery("FROM Book  WHERE status =:status");
+        q.setParameter("status", status.getType());
+        return (List<Book>) q.getResultList();
+
     }
+
+    @Override
+    public List<Book> getAllModels() {
+        s = HibernateUtil.getSf().openSession();
+        Query q = s.createQuery("FROM Book ");
+        return q.getResultList();
+    }
+}
 
